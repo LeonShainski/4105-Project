@@ -1,9 +1,10 @@
 import os
 from PIL import Image
 import glob
-#
+
 directoryGood="4105-Project\dataset"
-directoryBad="4105-Project\images"
+#directoryBad="4105-Project\images"
+
 
 #Ensuring images are not corrupt before processing them
 def checkImages(directory):
@@ -23,5 +24,8 @@ def checkImages(directory):
                 
 
 arrErrors=checkImages(directoryGood)
-print("The following files had been found to be corrupt: ",arrErrors) #Printing all files that were corrupt
+if (len(arrErrors)==0):
+    print("All images in order")
+else:
+    print("The following files had been found to be corrupt and/or unuseable: ",arrErrors) #Printing all files that were corrupt
 
